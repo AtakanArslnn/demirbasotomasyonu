@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MiniBankaAksamModelStoreContainer" CdmEntityContainer="MiniBankaAksamEntities">
+    <EntitySetMapping Name="vKullanici">
+      <EntityTypeMapping TypeName="MiniBankaAksamModel.vKullanici">
+        <MappingFragment StoreEntitySet="vKullanici">
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="KullaniciTCNO" ColumnName="KullaniciTCNO" />
+          <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+          <ScalarProperty Name="KullaniciSoyad" ColumnName="KullaniciSoyad" />
+          <ScalarProperty Name="KullaniciRolId" ColumnName="KullaniciRolId" />
+          <ScalarProperty Name="KullaniciRolAd" ColumnName="KullaniciRolAd" />
+          <ScalarProperty Name="KullaniciRolKod" ColumnName="KullaniciRolKod" />
+          <ScalarProperty Name="GirisAd" ColumnName="GirisAd" />
+          <ScalarProperty Name="GirisSifre" ColumnName="GirisSifre" />
+          <ScalarProperty Name="BankaSubeId" ColumnName="BankaSubeId" />
+          <ScalarProperty Name="BankaId" ColumnName="BankaId" />
+          <ScalarProperty Name="BankaAd" ColumnName="BankaAd" />
+          <ScalarProperty Name="BankaKodu" ColumnName="BankaKodu" />
+          <ScalarProperty Name="BankaSubeAd" ColumnName="BankaSubeAd" />
+          <ScalarProperty Name="BankaSubeKodu" ColumnName="BankaSubeKodu" />
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

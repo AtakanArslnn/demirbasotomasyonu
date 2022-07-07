@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gorselfinalModelStoreContainer" CdmEntityContainer="gorselfinalEntities">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="gorselfinalModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="adminkullaniciadi" ColumnName="adminkullaniciadi" />
+          <ScalarProperty Name="adminsifre" ColumnName="adminsifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ayniyat">
+      <EntityTypeMapping TypeName="gorselfinalModel.ayniyat">
+        <MappingFragment StoreEntitySet="ayniyat">
+          <ScalarProperty Name="ayniyatmemurID" ColumnName="ayniyatmemurID" />
+          <ScalarProperty Name="memurka" ColumnName="memurka" />
+          <ScalarProperty Name="memursifre" ColumnName="memursifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bina">
+      <EntityTypeMapping TypeName="gorselfinalModel.Bina">
+        <MappingFragment StoreEntitySet="Bina">
+          <ScalarProperty Name="BinaID" ColumnName="BinaID" />
+          <ScalarProperty Name="BinaAdi" ColumnName="BinaAdi" />
+          <ScalarProperty Name="BinaAdresi" ColumnName="BinaAdresi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Demirbas">
+      <EntityTypeMapping TypeName="gorselfinalModel.Demirbas">
+        <MappingFragment StoreEntitySet="Demirbas">
+          <ScalarProperty Name="SilinmeTarihi" ColumnName="SilinmeTarihi" />
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="DemirbasAktifmi" ColumnName="DemirbasAktifmi" />
+          <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
+          <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
+          <ScalarProperty Name="DemirbasTuru" ColumnName="DemirbasTuru" />
+          <ScalarProperty Name="DemirbasBilgisi" ColumnName="DemirbasBilgisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonelBirim">
+      <EntityTypeMapping TypeName="gorselfinalModel.PersonelBirim">
+        <MappingFragment StoreEntitySet="PersonelBirim">
+          <ScalarProperty Name="PersonelBirimID" ColumnName="PersonelBirimID" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="BirimID" ColumnName="BirimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="gorselfinalModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vBirimler">
+      <EntityTypeMapping TypeName="gorselfinalModel.vBirimler">
+        <MappingFragment StoreEntitySet="vBirimler">
+          <ScalarProperty Name="BirimAdres" ColumnName="BirimAdres" />
+          <ScalarProperty Name="BirimAdi" ColumnName="BirimAdi" />
+          <ScalarProperty Name="BirimKodu" ColumnName="BirimKodu" />
+          <ScalarProperty Name="BirimID" ColumnName="BirimID" />
+          <ScalarProperty Name="BinaID" ColumnName="BinaID" />
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+          <ScalarProperty Name="PersonelRolID" ColumnName="PersonelRolID" />
+          <ScalarProperty Name="Personelsifre" ColumnName="Personelsifre" />
+          <ScalarProperty Name="Personelka" ColumnName="Personelka" />
+          <ScalarProperty Name="PersonelSoyadi" ColumnName="PersonelSoyadi" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelTCNO" ColumnName="PersonelTCNO" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Birimler">
+      <EntityTypeMapping TypeName="gorselfinalModel.Birimler">
+        <MappingFragment StoreEntitySet="Birimler">
+          <ScalarProperty Name="BirimKodu" ColumnName="BirimKodu" />
+          <ScalarProperty Name="BirimAdres" ColumnName="BirimAdres" />
+          <ScalarProperty Name="BirimAdi" ColumnName="BirimAdi" />
+          <ScalarProperty Name="BirimID" ColumnName="BirimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personel">
+      <EntityTypeMapping TypeName="gorselfinalModel.Personel">
+        <MappingFragment StoreEntitySet="Personel">
+          <ScalarProperty Name="BinaID" ColumnName="BinaID" />
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+          <ScalarProperty Name="PersonelRolID" ColumnName="PersonelRolID" />
+          <ScalarProperty Name="Personelsifre" ColumnName="Personelsifre" />
+          <ScalarProperty Name="Personelka" ColumnName="Personelka" />
+          <ScalarProperty Name="PersonelSoyadi" ColumnName="PersonelSoyadi" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelTCNO" ColumnName="PersonelTCNO" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vKullanici">
+      <EntityTypeMapping TypeName="gorselfinalModel.vKullanici">
+        <MappingFragment StoreEntitySet="vKullanici">
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+          <ScalarProperty Name="Personelsifre" ColumnName="Personelsifre" />
+          <ScalarProperty Name="Personelka" ColumnName="Personelka" />
+          <ScalarProperty Name="BirimKodu" ColumnName="BirimKodu" />
+          <ScalarProperty Name="BirimAdi" ColumnName="BirimAdi" />
+          <ScalarProperty Name="PersonelRolID" ColumnName="PersonelRolID" />
+          <ScalarProperty Name="PersonelSoyadi" ColumnName="PersonelSoyadi" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelTCNO" ColumnName="PersonelTCNO" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zimmet">
+      <EntityTypeMapping TypeName="gorselfinalModel.Zimmet">
+        <MappingFragment StoreEntitySet="Zimmet">
+          <ScalarProperty Name="eklenmeTarihi" ColumnName="eklenmeTarihi" />
+          <ScalarProperty Name="personelTCNO" ColumnName="personelTCNO" />
+          <ScalarProperty Name="zimmetler" ColumnName="zimmetler" />
+          <ScalarProperty Name="personelID" ColumnName="personelID" />
+          <ScalarProperty Name="zimmetID" ColumnName="zimmetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vPersonel">
+      <EntityTypeMapping TypeName="gorselfinalModel.vPersonel">
+        <MappingFragment StoreEntitySet="vPersonel">
+          <ScalarProperty Name="BinaID" ColumnName="BinaID" />
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+          <ScalarProperty Name="PersonelRolID" ColumnName="PersonelRolID" />
+          <ScalarProperty Name="PersonelSoyadi" ColumnName="PersonelSoyadi" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelTCNO" ColumnName="PersonelTCNO" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vZimmetler">
+      <EntityTypeMapping TypeName="gorselfinalModel.vZimmetler">
+        <MappingFragment StoreEntitySet="vZimmetler">
+          <ScalarProperty Name="zimmetler" ColumnName="zimmetler" />
+          <ScalarProperty Name="BinaID" ColumnName="BinaID" />
+          <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+          <ScalarProperty Name="PersonelRolID" ColumnName="PersonelRolID" />
+          <ScalarProperty Name="PersonelSoyadi" ColumnName="PersonelSoyadi" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelTCNO" ColumnName="PersonelTCNO" />
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Derslik">
+      <EntityTypeMapping TypeName="gorselfinalModel.Derslik">
+        <MappingFragment StoreEntitySet="Derslik">
+          <ScalarProperty Name="DerslikBinasi" ColumnName="DerslikBinasi" />
+          <ScalarProperty Name="DerslikAdi" ColumnName="DerslikAdi" />
+          <ScalarProperty Name="DerslikID" ColumnName="DerslikID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

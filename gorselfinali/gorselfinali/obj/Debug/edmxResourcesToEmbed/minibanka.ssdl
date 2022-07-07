@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MiniBankaAksamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MiniBankaAksam.dbo.vKullanici' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vKullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+      <PropertyRef Name="KullaniciTCNO" />
+      <PropertyRef Name="KullaniciAd" />
+      <PropertyRef Name="KullaniciSoyad" />
+      <PropertyRef Name="KullaniciRolId" />
+      <PropertyRef Name="GirisAd" />
+      <PropertyRef Name="GirisSifre" />
+    </Key>
+    <Property Name="KullaniciID" Type="int" Nullable="false" />
+    <Property Name="KullaniciTCNO" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="KullaniciAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KullaniciSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KullaniciRolId" Type="int" Nullable="false" />
+    <Property Name="KullaniciRolAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciRolKod" Type="nvarchar" MaxLength="50" />
+    <Property Name="GirisAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GirisSifre" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="BankaSubeId" Type="int" />
+    <Property Name="BankaId" Type="int" />
+    <Property Name="BankaAd" Type="nvarchar" MaxLength="100" />
+    <Property Name="BankaKodu" Type="nchar" MaxLength="5" />
+    <Property Name="BankaSubeAd" Type="nvarchar" MaxLength="100" />
+    <Property Name="BankaSubeKodu" Type="nchar" MaxLength="4" />
+    <Property Name="Gorev" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MiniBankaAksamModelStoreContainer">
+    <EntitySet Name="vKullanici" EntityType="Self.vKullanici" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vKullanici].[KullaniciID] AS [KullaniciID], 
+    [vKullanici].[KullaniciTCNO] AS [KullaniciTCNO], 
+    [vKullanici].[KullaniciAd] AS [KullaniciAd], 
+    [vKullanici].[KullaniciSoyad] AS [KullaniciSoyad], 
+    [vKullanici].[KullaniciRolId] AS [KullaniciRolId], 
+    [vKullanici].[KullaniciRolAd] AS [KullaniciRolAd], 
+    [vKullanici].[KullaniciRolKod] AS [KullaniciRolKod], 
+    [vKullanici].[GirisAd] AS [GirisAd], 
+    [vKullanici].[GirisSifre] AS [GirisSifre], 
+    [vKullanici].[BankaSubeId] AS [BankaSubeId], 
+    [vKullanici].[BankaId] AS [BankaId], 
+    [vKullanici].[BankaAd] AS [BankaAd], 
+    [vKullanici].[BankaKodu] AS [BankaKodu], 
+    [vKullanici].[BankaSubeAd] AS [BankaSubeAd], 
+    [vKullanici].[BankaSubeKodu] AS [BankaSubeKodu], 
+    [vKullanici].[Gorev] AS [Gorev]
+    FROM [dbo].[vKullanici] AS [vKullanici]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

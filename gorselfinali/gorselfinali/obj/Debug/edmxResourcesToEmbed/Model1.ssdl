@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gorselfinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminkullaniciadi" Type="nvarchar(max)" />
+    <Property Name="adminsifre" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ayniyat">
+    <Key>
+      <PropertyRef Name="ayniyatmemurID" />
+    </Key>
+    <Property Name="ayniyatmemurID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memurka" Type="nvarchar" MaxLength="50" />
+    <Property Name="memursifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Bina">
+    <Key>
+      <PropertyRef Name="BinaID" />
+    </Key>
+    <Property Name="BinaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BinaAdi" Type="nvarchar(max)" />
+    <Property Name="BinaAdresi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Birimler">
+    <Key>
+      <PropertyRef Name="BirimID" />
+    </Key>
+    <Property Name="BirimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BirimAdi" Type="nvarchar(max)" />
+    <Property Name="BirimAdres" Type="nvarchar(max)" />
+    <Property Name="BirimKodu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Demirbas">
+    <Key>
+      <PropertyRef Name="DemirbasID" />
+    </Key>
+    <Property Name="DemirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DemirbasAdi" Type="nvarchar(max)" />
+    <Property Name="DemirbasTuru" Type="nvarchar(max)" />
+    <Property Name="DemirbasBilgisi" Type="nvarchar(max)" />
+    <Property Name="DemirbasAktifmi" Type="bit" />
+    <Property Name="EklenmeTarihi" Type="datetime" />
+    <Property Name="SilinmeTarihi" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Derslik">
+    <Key>
+      <PropertyRef Name="DerslikID" />
+    </Key>
+    <Property Name="DerslikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DerslikAdi" Type="nvarchar(max)" />
+    <Property Name="DerslikBinasi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="nchar" MaxLength="11" />
+    <Property Name="PersonelAdi" Type="nvarchar(max)" />
+    <Property Name="PersonelSoyadi" Type="nvarchar(max)" />
+    <Property Name="Personelka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personelsifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonelRolID" Type="int" />
+    <Property Name="Gorev" Type="nvarchar(max)" />
+    <Property Name="BinaID" Type="int" />
+  </EntityType>
+  <EntityType Name="PersonelBirim">
+    <Key>
+      <PropertyRef Name="PersonelBirimID" />
+    </Key>
+    <Property Name="PersonelBirimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelID" Type="int" />
+    <Property Name="BirimID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Zimmet">
+    <Key>
+      <PropertyRef Name="zimmetID" />
+    </Key>
+    <Property Name="zimmetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personelID" Type="int" />
+    <Property Name="zimmetler" Type="nvarchar(max)" />
+    <Property Name="personelTCNO" Type="nchar" MaxLength="11" />
+    <Property Name="eklenmeTarihi" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'gorselfinal.dbo.vBirimler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vBirimler">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+      <PropertyRef Name="BirimID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="nchar" MaxLength="11" />
+    <Property Name="PersonelAdi" Type="nvarchar(max)" />
+    <Property Name="PersonelSoyadi" Type="nvarchar(max)" />
+    <Property Name="Personelka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personelsifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonelRolID" Type="int" />
+    <Property Name="Gorev" Type="nvarchar(max)" />
+    <Property Name="BinaID" Type="int" />
+    <Property Name="BirimID" Type="int" Nullable="false" />
+    <Property Name="BirimKodu" Type="nchar" MaxLength="10" />
+    <Property Name="BirimAdi" Type="nvarchar(max)" />
+    <Property Name="BirimAdres" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'gorselfinal.dbo.vKullanici' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vKullanici">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="nchar" MaxLength="11" />
+    <Property Name="PersonelAdi" Type="nvarchar(max)" />
+    <Property Name="PersonelSoyadi" Type="nvarchar(max)" />
+    <Property Name="PersonelRolID" Type="int" />
+    <Property Name="BirimAdi" Type="nvarchar(max)" />
+    <Property Name="BirimKodu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personelka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Personelsifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gorev" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'gorselfinal.dbo.vPersonel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vPersonel">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="nchar" MaxLength="11" />
+    <Property Name="PersonelAdi" Type="nvarchar(max)" />
+    <Property Name="PersonelSoyadi" Type="nvarchar(max)" />
+    <Property Name="PersonelRolID" Type="int" />
+    <Property Name="Gorev" Type="nvarchar(max)" />
+    <Property Name="BinaID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'gorselfinal.dbo.vZimmetler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vZimmetler">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="nchar" MaxLength="11" />
+    <Property Name="PersonelAdi" Type="nvarchar(max)" />
+    <Property Name="PersonelSoyadi" Type="nvarchar(max)" />
+    <Property Name="PersonelRolID" Type="int" />
+    <Property Name="Gorev" Type="nvarchar(max)" />
+    <Property Name="BinaID" Type="int" />
+    <Property Name="zimmetler" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Personel_Birimler1">
+    <End Role="Birimler" Type="Self.Birimler" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Birimler">
+        <PropertyRef Name="BirimID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="PersonelRolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zimmet_Personel">
+    <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+    <End Role="Zimmet" Type="Self.Zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personel">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Zimmet">
+        <PropertyRef Name="personelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gorselfinalModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ayniyat" EntityType="Self.ayniyat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bina" EntityType="Self.Bina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Birimler" EntityType="Self.Birimler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Demirbas" EntityType="Self.Demirbas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Derslik" EntityType="Self.Derslik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonelBirim" EntityType="Self.PersonelBirim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zimmet" EntityType="Self.Zimmet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vBirimler" EntityType="Self.vBirimler" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vBirimler].[PersonelID] AS [PersonelID], 
+    [vBirimler].[PersonelTCNO] AS [PersonelTCNO], 
+    [vBirimler].[PersonelAdi] AS [PersonelAdi], 
+    [vBirimler].[PersonelSoyadi] AS [PersonelSoyadi], 
+    [vBirimler].[Personelka] AS [Personelka], 
+    [vBirimler].[Personelsifre] AS [Personelsifre], 
+    [vBirimler].[PersonelRolID] AS [PersonelRolID], 
+    [vBirimler].[Gorev] AS [Gorev], 
+    [vBirimler].[BinaID] AS [BinaID], 
+    [vBirimler].[BirimID] AS [BirimID], 
+    [vBirimler].[BirimKodu] AS [BirimKodu], 
+    [vBirimler].[BirimAdi] AS [BirimAdi], 
+    [vBirimler].[BirimAdres] AS [BirimAdres]
+    FROM [dbo].[vBirimler] AS [vBirimler]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vKullanici" EntityType="Self.vKullanici" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vKullanici].[PersonelID] AS [PersonelID], 
+    [vKullanici].[PersonelTCNO] AS [PersonelTCNO], 
+    [vKullanici].[PersonelAdi] AS [PersonelAdi], 
+    [vKullanici].[PersonelSoyadi] AS [PersonelSoyadi], 
+    [vKullanici].[PersonelRolID] AS [PersonelRolID], 
+    [vKullanici].[BirimAdi] AS [BirimAdi], 
+    [vKullanici].[BirimKodu] AS [BirimKodu], 
+    [vKullanici].[Personelka] AS [Personelka], 
+    [vKullanici].[Personelsifre] AS [Personelsifre], 
+    [vKullanici].[Gorev] AS [Gorev]
+    FROM [dbo].[vKullanici] AS [vKullanici]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vPersonel" EntityType="Self.vPersonel" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vPersonel].[PersonelID] AS [PersonelID], 
+    [vPersonel].[PersonelTCNO] AS [PersonelTCNO], 
+    [vPersonel].[PersonelAdi] AS [PersonelAdi], 
+    [vPersonel].[PersonelSoyadi] AS [PersonelSoyadi], 
+    [vPersonel].[PersonelRolID] AS [PersonelRolID], 
+    [vPersonel].[Gorev] AS [Gorev], 
+    [vPersonel].[BinaID] AS [BinaID]
+    FROM [dbo].[vPersonel] AS [vPersonel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vZimmetler" EntityType="Self.vZimmetler" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vZimmetler].[PersonelID] AS [PersonelID], 
+    [vZimmetler].[PersonelTCNO] AS [PersonelTCNO], 
+    [vZimmetler].[PersonelAdi] AS [PersonelAdi], 
+    [vZimmetler].[PersonelSoyadi] AS [PersonelSoyadi], 
+    [vZimmetler].[PersonelRolID] AS [PersonelRolID], 
+    [vZimmetler].[Gorev] AS [Gorev], 
+    [vZimmetler].[BinaID] AS [BinaID], 
+    [vZimmetler].[zimmetler] AS [zimmetler]
+    FROM [dbo].[vZimmetler] AS [vZimmetler]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Personel_Birimler1" Association="Self.FK_Personel_Birimler1">
+      <End Role="Birimler" EntitySet="Birimler" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zimmet_Personel" Association="Self.FK_Zimmet_Personel">
+      <End Role="Personel" EntitySet="Personel" />
+      <End Role="Zimmet" EntitySet="Zimmet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

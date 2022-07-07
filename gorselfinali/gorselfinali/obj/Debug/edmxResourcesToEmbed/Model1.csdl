@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gorselfinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adminkullaniciadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adminsifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ayniyat">
+    <Key>
+      <PropertyRef Name="ayniyatmemurID" />
+    </Key>
+    <Property Name="ayniyatmemurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="memurka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memursifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bina">
+    <Key>
+      <PropertyRef Name="BinaID" />
+    </Key>
+    <Property Name="BinaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BinaAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BinaAdresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Demirbas">
+    <Key>
+      <PropertyRef Name="DemirbasID" />
+    </Key>
+    <Property Name="DemirbasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DemirbasAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DemirbasTuru" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DemirbasBilgisi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DemirbasAktifmi" Type="Boolean" />
+    <Property Name="EklenmeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="SilinmeTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PersonelBirim">
+    <Key>
+      <PropertyRef Name="PersonelBirimID" />
+    </Key>
+    <Property Name="PersonelBirimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelID" Type="Int32" />
+    <Property Name="BirimID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="gorselfinalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin" EntityType="Self.admin" />
+    <EntitySet Name="ayniyat" EntityType="Self.ayniyat" />
+    <EntitySet Name="Bina" EntityType="Self.Bina" />
+    <EntitySet Name="Demirbas" EntityType="Self.Demirbas" />
+    <EntitySet Name="PersonelBirim" EntityType="Self.PersonelBirim" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="vBirimler" EntityType="gorselfinalModel.vBirimler" />
+    <EntitySet Name="Birimler" EntityType="gorselfinalModel.Birimler" />
+    <EntitySet Name="Personel" EntityType="gorselfinalModel.Personel" />
+    <AssociationSet Name="FK_Personel_Birimler1" Association="gorselfinalModel.FK_Personel_Birimler1">
+      <End Role="Birimler" EntitySet="Birimler" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <EntitySet Name="vKullanici" EntityType="gorselfinalModel.vKullanici" />
+    <EntitySet Name="Zimmet" EntityType="gorselfinalModel.Zimmet" />
+    <EntitySet Name="vPersonel" EntityType="gorselfinalModel.vPersonel" />
+    <AssociationSet Name="FK_Zimmet_Personel" Association="gorselfinalModel.FK_Zimmet_Personel">
+      <End Role="Personel" EntitySet="Personel" />
+      <End Role="Zimmet" EntitySet="Zimmet" />
+    </AssociationSet>
+    <EntitySet Name="vZimmetler" EntityType="gorselfinalModel.vZimmetler" />
+    <EntitySet Name="Derslik" EntityType="gorselfinalModel.Derslik" />
+  </EntityContainer>
+  <EntityType Name="vBirimler">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+      <PropertyRef Name="BirimID" />
+    </Key>
+    <Property Name="PersonelID" Type="Int32" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Personelka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personelsifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelRolID" Type="Int32" />
+    <Property Name="Gorev" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BinaID" Type="Int32" />
+    <Property Name="BirimID" Type="Int32" Nullable="false" />
+    <Property Name="BirimKodu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="BirimAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BirimAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Birimler">
+    <Key>
+      <PropertyRef Name="BirimID" />
+    </Key>
+    <Property Name="BirimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BirimAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BirimAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="gorselfinalModel.FK_Personel_Birimler1" FromRole="Birimler" ToRole="Personel" />
+    <Property Name="BirimKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelTCNO" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Personelka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personelsifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelRolID" Type="Int32" />
+    <Property Name="Gorev" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BinaID" Type="Int32" />
+    <NavigationProperty Name="Birimler" Relationship="gorselfinalModel.FK_Personel_Birimler1" FromRole="Personel" ToRole="Birimler" />
+    <NavigationProperty Name="Zimmet" Relationship="gorselfinalModel.FK_Zimmet_Personel" FromRole="Personel" ToRole="Zimmet" />
+  </EntityType>
+  <Association Name="FK_Personel_Birimler1">
+    <End Type="gorselfinalModel.Birimler" Role="Birimler" Multiplicity="0..1" />
+    <End Type="gorselfinalModel.Personel" Role="Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Birimler">
+        <PropertyRef Name="BirimID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="PersonelRolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vKullanici">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="Int32" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelRolID" Type="Int32" />
+    <Property Name="BirimAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BirimKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personelka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Personelsifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gorev" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Zimmet">
+    <Key>
+      <PropertyRef Name="zimmetID" />
+    </Key>
+    <Property Name="zimmetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="personelID" Type="Int32" />
+    <Property Name="zimmetler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="personelTCNO" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="gorselfinalModel.FK_Zimmet_Personel" FromRole="Zimmet" ToRole="Personel" />
+    <Property Name="eklenmeTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vPersonel">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelTCNO" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelRolID" Type="Int32" />
+    <Property Name="Gorev" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BinaID" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Zimmet_Personel">
+    <End Type="gorselfinalModel.Personel" Role="Personel" Multiplicity="0..1" />
+    <End Type="gorselfinalModel.Zimmet" Role="Zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personel">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="Zimmet">
+        <PropertyRef Name="personelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vZimmetler">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="Int32" Nullable="false" />
+    <Property Name="PersonelTCNO" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelSoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelRolID" Type="Int32" />
+    <Property Name="Gorev" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BinaID" Type="Int32" />
+    <Property Name="zimmetler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Derslik">
+    <Key>
+      <PropertyRef Name="DerslikID" />
+    </Key>
+    <Property Name="DerslikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DerslikAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DerslikBinasi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
